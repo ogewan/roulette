@@ -1,0 +1,21 @@
+{
+  "name": "link-preview",
+  "version": "1.0.0",
+  "description": "Generates link preview from a given URL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "link",
+    "preview",
+    "open-graph"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.17.1",
+    "open-graph-scraper": "^4.4.0"
+  }
+}

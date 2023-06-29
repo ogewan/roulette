@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="input-tab">
+        <textarea id="url-input" placeholder="Input URLs here..."></textarea>
+        <input type="text" id="tag-input" placeholder="Input tags here...">
+        <button onclick="addUrlsAndTags()">Add</button>
+    </div>
+    <div id="output-tab">
+        <button onclick="generateUrl()">Generate</button>
+        <div id="preview-container"></div>
+        <!--<a id="selected-url" href="" target="_blank">Open Link</a>-->
+        <button onclick="snoozeUrl()">Snooze</button>
+        <button onclick="blockUrl()">Block</button>
+        <input type="text" id="tag-filter" placeholder="Filter by tags" oninput="filterUrls()">
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

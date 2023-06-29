@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Link Preview</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #preview-container {
+            margin-top: 20px;
+        }
+
+        .preview {
+            max-width: 300px;
+            max-height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Link Preview</h2>
+    <input type="text" id="url-input" placeholder="Enter URL here...">
+    <button id="generate-preview">Generate Preview</button>
+    <div id="preview-container"></div>
+
+    <script>
+        $(document).ready(function () {
+            $('#generate-preview').click(function () {
+                let url = $('#url-input').val();
+                $.post('/preview', { url: url }, function (data) {
+                    $('#preview-container').html(`
+                        <a href="${data.url}" target="_blank">
+                            <img class="preview" src="${data.image}" alt="Preview image">
+                            <h3>${data.title}</h3>
+                            <p>${data.description}</p>
+                        </a>
+                    `);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
