@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>URL List</title>
+    <script src="urlList.js"></script>
+</head>
+
+<body>
+    <url-list id="url-list"></url-list>
+
+    <script>
+        document.getElementById('url-list').data = [
+            { url: 'https://www.example.com/some/very/long/url/that/needs/to/be/truncated', timestamp: 1648680907, tag1: true, tag2: false },
+            { url: 'https://www.example2.com', timestamp: 1648680908, tag1: false, tag2: true }
+        ];
+    </script>
+</body>
+
+</html>

@@ -19,15 +19,3 @@ textarea, input {
     max-width: 300px;
     max-height: 300px;
 }
-
-.tag {
-    display: inline-block;
-    margin: 5px;
-    padding: 5px;
-    border: 1px solid #000;
-    border-radius: 5px;
-}
-
-.tag button {
-    margin-left: 10px;
-}

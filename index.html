@@ -14,19 +14,46 @@
 </head>
 
 <body>
-    <div id="input-tab">
-        <textarea id="url-input" placeholder="Input URLs here..."></textarea>
-        <input type="text" id="tag-input" placeholder="Input tags here...">
-        <button onclick="addUrlsAndTags()">Add</button>
-    </div>
-    <div id="output-tab">
-        <button onclick="generateUrl()">Generate</button>
-        <div id="preview-container"></div>
-        <!--<a id="selected-url" href="" target="_blank">Open Link</a>-->
-        <button onclick="snoozeUrl()">Snooze</button>
-        <button onclick="blockUrl()">Block</button>
-        <input type="text" id="tag-filter" placeholder="Filter by tags" oninput="filterUrls()">
-    </div>
+    <accordion-tab>
+        <span slot="title">Input</span>
+        <div id="input-tab" slot="content">
+            <textarea id="url-input" placeholder="Input URLs here..."></textarea>
+            <!--<input type="text" id="tag-input" placeholder="Input tags here...">-->
+            <tag-input id="tags"></tag-input>
+            <button onclick="addUrlsAndTags()">Add</button>
+        </div>
+    </accordion-tab>
+    <accordion-tab>
+        <span slot="title">Output</span>
+        <div id="output-tab" slot="content">
+            <button onclick="generateUrl()">Generate</button>
+            <div id="preview-container"></div>
+            <!--<a id="selected-url" href="" target="_blank">Open Link</a>-->
+            <button onclick="snoozeUrl()">Snooze</button>
+            <button onclick="blockUrl()">Block</button>
+            <!--<input type="text" id="tag-filter" placeholder="Filter by tags" oninput="filterUrls()">-->
+            <accordion-tab>
+                <span slot="title">Filters</span>
+                <span slot="content">
+                    <div style="display: inline-flex;">
+                        <input type="datetime-local" id="filtertime">
+                        <button onclick="clearTime()">Reset</button>
+                    </div>
+                    <br />
+                    <tag-input id="filters"></tag-input>
+                </span>
+            </accordion-tab>
+        </div>
+    </accordion-tab>
+    <accordion-tab>
+        <span slot="title">Database</span>
+        <div id="input-tab" slot="content">
+            <textarea id="url-input" placeholder="Input URLs here..."></textarea>
+            <!--<input type="text" id="tag-input" placeholder="Input tags here...">-->
+            <tag-input id="tags"></tag-input>
+            <button onclick="addUrlsAndTags()">Add</button>
+        </div>
+    </accordion-tab>
     <script src="app.js"></script>
 </body>
 
